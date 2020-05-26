@@ -40,4 +40,3 @@ Trois entit�s sont donc mises en jeu comme demandé dans l'examen. Un litige est
 
 
 Le design est simple. J'ai mis les boutons en valeur pour faciliter l'expérience utilisateur.
->>>>>>> a3492f68390f9565d1cac07ff21f9720cca01a4a
