@@ -1,18 +1,17 @@
-<<<<<<< HEAD
+
 ### EntitÈs: 
 J'ai choisi de travailler sur l'entitÈ Litige (Ligitation) (1) qui est reliÈe aux entitÈs :
 - Domaine d'expertise (expertise field) (2)
 - User (3)
 
 Elle est reliÈe ‡ d'autres entitÈs mais j'ai travaillÈ sur ces trois-ci.
-=======
-### Entit√©s: 
-J'ai choisi de travailler sur l'entit√© Litige (Ligitation) (1) qui est reli√©e aux entit√©s :
+
+### EntitÈs: 
+J'ai choisi de travailler sur l'entitÈ Litige (Ligitation) (1) qui est reliÈe aux entitÈs :
 - Domaine d'expertise (expertise field) (2)
 - User (3)
 
-Elle est reli√©e √† d'autres entit√©s mais j'ai travaill√© sur ces trois-ci.
->>>>>>> a3492f68390f9565d1cac07ff21f9720cca01a4a
+Elle est reli√Èe ‡† d'autres entit√Ès mais j'ai travaillÈ sur ces trois-ci.
 
 ### Installation :
 - `composer install`
@@ -21,8 +20,7 @@ Elle est reli√©e √† d'autres entit√©s mais j'ai travaill√© sur ces trois-ci.
 - `php bin/console server:run`
 
 ### Instructions:
-<<<<<<< HEAD
-1) Si la base de donnÈes est vierge, il faut crÈÈer un domaine d'expertise (expertise field) directement dans celle-ci.
+1) Si la base de donnÈes est vierge, il faut crÈÈr un domaine d'expertise (expertise field) directement dans celle-ci.
 2) Aller sur l'application eMediation et s'inscrire puis se connecter.
 3) AccÈder ‡ "Mes litiges" puis en crÈÈr un. On peut Ègalement modifier et supprimer un litige.
 
@@ -32,14 +30,13 @@ Trois entitÈs sont donc mises en jeu comme demandÈ dans l'examen. Un litige est 
 
 
 Le design est simple. J'ai mis les boutons en valeur pour faciliter l'expÈrience utilisateur.
-=======
-1) Si la base de donn√©es est vierge, il faut cr√©√©er un domaine d'expertise (expertise field) directement dans celle-ci.
+1) Si la base de donn√©es est vierge, il faut crÈÈr un domaine d'expertise (expertise field) directement dans celle-ci.
 2) Aller sur l'application eMediation et s'inscrire puis se connecter.
-3) Acc√©der √† "Mes litiges" puis en cr√©√©r un. On peut √©galement modifier et supprimer un litige.
+3) AccÈder √† "Mes litiges" puis en crÈÈr un. On peut Ègalement modifier et supprimer un litige.
 
-Seuls les litiges de l'utilisateur connect√© sont affich√©s. Si l'utilisateur n'a pas de litige, alors il n'y en aura aucun d'affich√©.
+Seuls les litiges de l'utilisateur connectÈ sont affichÈs. Si l'utilisateur n'a pas de litige, alors il n'y en aura aucun d'affichÈ.
 
-Trois entit√©s sont donc mises en jeu comme demand√© dans l'examen. Un litige est li√© √† un utilisateur et √† un domaine d'expertise (cr√©√© √† partir de la base de donn√©es ici suite aux contraintes de temps de l'examen).
+Trois entitÈs sont donc mises en jeu comme demand√© dans l'examen. Un litige est liÈ ‡† un utilisateur et ‡ un domaine d'expertise (crÈÈ ‡ partir de la base de donnÈes ici suite aux contraintes de temps de l'examen).
 
 
 Le design est simple. J'ai mis les boutons en valeur pour faciliter l'exp√©rience utilisateur.
