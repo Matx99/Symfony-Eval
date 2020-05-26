@@ -1,17 +1,17 @@
-Entités: 
+### Entités: 
 J'ai choisi de travailler sur l'entité Litige (Ligitation) (1) qui est reliée aux entités :
 - Domaine d'expertise (expertise field) (2)
 - User (3)
 
 Elle est reliée à d'autres entités mais j'ai travaillé sur ces trois-ci.
 
-Installation :
-- composer install
-- php bin/console doctrine:database:create
-- php bin/console d:m:m
-- php bin/console server:run
+### Installation :
+- `composer install`
+- `php bin/console doctrine:database:create`
+- `php bin/console d:m:m`
+- `php bin/console server:run`
 
-Instructions:
+### Instructions:
 1) Si la base de données est vierge, il faut crééer un domaine d'expertise (expertise field) directement dans celle-ci.
 2) Aller sur l'application eMediation et s'inscrire puis se connecter.
 3) Accéder à "Mes litiges" puis en créér un. On peut également modifier et supprimer un litige.
