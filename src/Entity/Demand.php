@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\RequestRepository;
+use App\Repository\DemandRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=RequestRepository::class)
  */
-class Request
+class Demand
 {
     /**
      * @ORM\Id()

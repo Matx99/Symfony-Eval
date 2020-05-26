@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Litigation index{% endblock %}
+
+{% block body %}
+    <h1>Litigation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Subject</th>
+                <th>DateTime</th>
+                <th>Article</th>
+                <th>Payment</th>
+                <th>Refund</th>
+                <th>Delay</th>
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for litigation in litigations %}
+            <tr>
+                <td>{{ litigation.id }}</td>
+                <td>{{ litigation.subject }}</td>
+                <td>{{ litigation.dateTime ? litigation.dateTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ litigation.article }}</td>
+                <td>{{ litigation.payment }}</td>
+                <td>{{ litigation.refund }}</td>
+                <td>{{ litigation.delay }}</td>
+                <td>{{ litigation.status ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('litigation_show', {'id': litigation.id}) }}">show</a>
+                    <a href="{{ path('litigation_edit', {'id': litigation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('litigation_new') }}">Create new</a>
+{% endblock %}

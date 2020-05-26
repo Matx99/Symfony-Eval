@@ -40,14 +40,14 @@ class Mediator
     private $appointment;
 
     /**
-     * @ORM\OneToMany(targetEntity=Request::class, mappedBy="mediator")
+     * @ORM\OneToMany(targetEntity=Demand::class, mappedBy="mediator")
      */
-    private $requests;
+    private $demands;
 
     public function __construct()
     {
         $this->appointment = new ArrayCollection();
-        $this->requests = new ArrayCollection();
+        $this->demands = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -123,30 +123,30 @@ class Mediator
     }
 
     /**
-     * @return Collection|Request[]
+     * @return Collection|Demand[]
      */
-    public function getRequests(): Collection
+    public function getDemands(): Collection
     {
-        return $this->requests;
+        return $this->demands;
     }
 
-    public function addRequest(Request $request): self
+    public function addDemand(Demand $demand): self
     {
-        if (!$this->requests->contains($request)) {
-            $this->requests[] = $request;
-            $request->setMediator($this);
+        if (!$this->demands->contains($demand)) {
+            $this->demands[] = $demand;
+            $demand->setMediator($this);
         }
 
         return $this;
     }
 
-    public function removeRequest(Request $request): self
+    public function removeDemand(Demand $demand): self
     {
-        if ($this->requests->contains($request)) {
-            $this->requests->removeElement($request);
+        if ($this->demands->contains($demand)) {
+            $this->demands->removeElement($demand);
             // set the owning side to null (unless already changed)
-            if ($request->getMediator() === $this) {
-                $request->setMediator(null);
+            if ($demand->getMediator() === $this) {
+                $demand->setMediator(null);
             }
         }
 
