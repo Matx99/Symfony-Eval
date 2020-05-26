@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Litigation{% endblock %}
+
+{% block body %}
+    <h1>Edit Litigation</h1>
+
+    {{ include('litigation/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('litigation_index') }}" class="btn btn-primary">back to list</a>
+
+    {{ include('litigation/_delete_form.html.twig') }}
+{% endblock %}

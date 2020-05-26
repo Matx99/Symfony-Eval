@@ -5,6 +5,12 @@ J'ai choisi de travailler sur l'entité Litige (Ligitation) (1) qui est reliée au
 
 Elle est reliée à d'autres entités mais j'ai travaillé sur ces trois-ci.
 
+Installation :
+- composer install
+- php bin/console doctrine:database:create
+- php bin/console d:m:m
+- php bin/console server:run
+
 Instructions:
 1) Si la base de données est vierge, il faut crééer un domaine d'expertise (expertise field) directement dans celle-ci.
 2) Aller sur l'application eMediation et s'inscrire puis se connecter.
@@ -15,3 +21,4 @@ Seuls les litiges de l'utilisateur connecté sont affichés. Si l'utilisateur n'a 
 Trois entités sont donc mises en jeu comme demandé dans l'examen. Un litige est lié à un utilisateur et à un domaine d'expertise (créé à partir de la base de données ici suite aux contraintes de temps de l'examen).
 
 
+Le design est simple. J'ai mis les boutons en valeur pour faciliter l'expérience utilisateur.

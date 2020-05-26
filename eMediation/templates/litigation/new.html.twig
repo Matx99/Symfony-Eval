@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Litigation{% endblock %}
+
+{% block body %}
+    <h1>Create new Litigation</h1>
+
+    {{ include('litigation/_form.html.twig') }}
+
+    <a href="{{ path('litigation_index') }}" class="btn btn-primary">back to list</a>
+{% endblock %}

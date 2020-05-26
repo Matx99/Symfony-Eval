@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Litigation{% endblock %}
+
+{% block body %}
+    <h1>Litigation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ litigation.id }}</td>
+            </tr>
+            <tr>
+                <th>Subject</th>
+                <td>{{ litigation.subject }}</td>
+            </tr>
+            <tr>
+                <th>DateTime</th>
+                <td>{{ litigation.dateTime ? litigation.dateTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Article</th>
+                <td>{{ litigation.article }}</td>
+            </tr>
+            <tr>
+                <th>Payment</th>
+                <td>{{ litigation.payment }}</td>
+            </tr>
+            <tr>
+                <th>Refund</th>
+                <td>{{ litigation.refund }}</td>
+            </tr>
+            <tr>
+                <th>Delay</th>
+                <td>{{ litigation.delay }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ litigation.status ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('litigation_index') }}" class="btn btn-primary">back to list</a>
+
+    <a href="{{ path('litigation_edit', {'id': litigation.id}) }}" class="btn btn-warning">edit</a>
+
+    {{ include('litigation/_delete_form.html.twig') }}
+{% endblock %}
