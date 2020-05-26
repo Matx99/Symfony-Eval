@@ -17,8 +17,8 @@ security:
         main:
             form_login:
                 # ...
-                default_target_path: request
-            anonymous: lazy
+                default_target_path: index
+            anonymous: true
             provider: app_user_provider
             guard:
                 authenticators:
@@ -26,7 +26,7 @@ security:
             logout:
                 path: app_logout
                 # where to redirect after logout
-                target: request
+                target: litigation_index
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

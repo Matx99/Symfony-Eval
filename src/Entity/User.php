@@ -83,9 +83,15 @@ class User implements UserInterface
      */
     private $appointment;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Litigation::class, mappedBy="user")
+     */
+    private $litigations;
+
     public function __construct()
     {
         $this->appointment = new ArrayCollection();
+        $this->litigations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -287,6 +293,37 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($appointment->getUser() === $this) {
                 $appointment->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Litigation[]
+     */
+    public function getLitigations(): Collection
+    {
+        return $this->litigations;
+    }
+
+    public function addLitigation(Litigation $litigation): self
+    {
+        if (!$this->litigations->contains($litigation)) {
+            $this->litigations[] = $litigation;
+            $litigation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLitigation(Litigation $litigation): self
+    {
+        if ($this->litigations->contains($litigation)) {
+            $this->litigations->removeElement($litigation);
+            // set the owning side to null (unless already changed)
+            if ($litigation->getUser() === $this) {
+                $litigation->setUser(null);
             }
         }
 

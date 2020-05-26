@@ -64,6 +64,11 @@ class Litigation
      */
     private $expertiseField;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="litigations")
+     */
+    private $user;
+
     public function __construct()
     {
         $this->document = new ArrayCollection();
@@ -197,6 +202,18 @@ class Litigation
     public function setExpertiseField(?ExpertiseField $expertiseField): self
     {
         $this->expertiseField = $expertiseField;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

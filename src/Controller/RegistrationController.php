@@ -38,7 +38,7 @@ class RegistrationController extends AbstractController
 
             // redirection
 
-            return $this->redirectToRoute('product_index');
+            return $this->redirectToRoute('index');
 
             return $guardHandler->authenticateUserAndHandleSuccess(
                 $user,

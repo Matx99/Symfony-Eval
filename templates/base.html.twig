@@ -17,12 +17,6 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor03">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('litigation_new') }}">Faire une demande de litige
-                        </a>
-                    </li>
-                </ul>
                 <ul class="navbar-nav ml-auto">
                     {% if not app.user %}
                         <li class="nav-item">
@@ -32,14 +26,14 @@
                             <a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
                         </li>
                     {% else %}
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            {# <a class="nav-link" href="{{ path('account_edit', {'id':app.user.id}) }}"> #}
-                            <a class="nav-link" href="">
-                                <i class="fas fa-user mr-1"></i> Mon compte
+                            <a class="nav-link" href="{{ path('litigation_new') }}">Faire une demande de litige
                             </a>
                         </li>
+                    </ul>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">
+                            <a class="nav-link" href="{{ path('litigation_index') }}">
                                 Mes litiges
                             </a>
                         </li>

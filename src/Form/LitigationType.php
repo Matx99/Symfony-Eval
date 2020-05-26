@@ -13,7 +13,6 @@ class LitigationType extends AbstractType
     {
         $builder
             ->add('subject')
-            ->add('dateTime')
             ->add('article')
             ->add('payment')
             ->add('refund')

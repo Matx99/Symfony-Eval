@@ -3,8 +3,7 @@
 {% block title %}Litigation index{% endblock %}
 
 {% block body %}
-    <h1>Litigation index</h1>
-
+    <h1>Mes litiges</h1>
     <table class="table">
         <thead>
             <tr>
@@ -21,6 +20,9 @@
         </thead>
         <tbody>
         {% for litigation in litigations %}
+            {% if not app.user %}
+                <h3>Vous devez vous inscrire et vous connecter.</h3>
+            {% elseif litigation.user.id == app.user.id %}
             <tr>
                 <td>{{ litigation.id }}</td>
                 <td>{{ litigation.subject }}</td>
@@ -31,10 +33,13 @@
                 <td>{{ litigation.delay }}</td>
                 <td>{{ litigation.status ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('litigation_show', {'id': litigation.id}) }}">show</a>
-                    <a href="{{ path('litigation_edit', {'id': litigation.id}) }}">edit</a>
+                    <a href="{{ path('litigation_show', {'id': litigation.id}) }}" class="btn btn-danger">show</a>
+                    <a href="{{ path('litigation_edit', {'id': litigation.id}) }}" class="btn btn-warning">edit</a>
                 </td>
             </tr>
+            {% else %}
+                
+            {% endif %}
         {% else %}
             <tr>
                 <td colspan="9">no records found</td>
@@ -43,5 +48,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('litigation_new') }}">Create new</a>
+    <a href="{{ path('litigation_new') }}" class="btn btn-info">Create new</a>
 {% endblock %}

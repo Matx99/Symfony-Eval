@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Litigation;
+use App\Entity\User;
 use App\Form\LitigationType;
 use App\Repository\LitigationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,10 +14,26 @@ use Symfony\Component\Routing\Annotation\Route;
 class LitigationController extends AbstractController
 {
     /**
-     * @Route("/", name="litigation_index", methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
+     */
+    public function home(LitigationRepository $litigationRepository): Response
+    {
+
+        //dd($litigationRepository->findAll());
+
+        return $this->render('litigation/home.html.twig', [
+            'litigations' => $litigationRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/litigation", name="litigation_index", methods={"GET"})
      */
     public function index(LitigationRepository $litigationRepository): Response
     {
+
+        //dd($litigationRepository->findAll());
+
         return $this->render('litigation/index.html.twig', [
             'litigations' => $litigationRepository->findAll(),
         ]);
@@ -27,11 +44,14 @@ class LitigationController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        //dd($this->getUser());
         $litigation = new Litigation();
         $form = $this->createForm(LitigationType::class, $litigation);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $litigation->setUser($this->getUser());
+            $litigation->setDateTime(new \DateTime());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($litigation);
             $entityManager->flush();
@@ -64,6 +84,7 @@ class LitigationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $litigation->setDateTime(new \DateTime());
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('litigation_index');
